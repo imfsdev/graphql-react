@@ -1,4 +1,5 @@
 require("dotenv").config();
+import cors from "cors";
 import express from "express";
 import graphqlHTTP from "express-graphql";
 import mongoose from "mongoose";
@@ -20,6 +21,8 @@ mongoose
   );
 
 const app = express();
+
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.json({
